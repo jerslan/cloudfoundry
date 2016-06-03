@@ -100,9 +100,6 @@ public class CloudFoundryPushPublisher extends Recorder {
      */
     @Override
     public boolean perform(AbstractBuild build, Launcher launcher, BuildListener listener) {
-        // We don't want to push if the build failed
-        if (build.getResult().isWorseThan(Result.SUCCESS))
-            return true;
 
         listener.getLogger().println("Cloud Foundry Plugin:");
 
